@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>apriltag_pose</name>
+  <version>0.1.0</version>
+  <description>
+    ROS 2 + OpenCV + AprilTag 相机位姿估计与测距系统。
+    读取 V4L2 摄像头(USB 摄像头或电脑内置摄像头)，发布图像，
+    棋盘格标定内参，image_proc 去畸变，apriltag_ros 检测，
+    自定义节点用 solvePnP 计算 rvec/tvec，建立 TF，
+    在图像上标注 ID/角点/中心/坐标轴/tvec/距离，
+    在 RViz2 显示坐标系，并做距离误差实验与统计报告。
+    拓展：以 AprilTag 坐标系为世界系的固定虚拟三维物体 AR 显示。
+  </description>
+  <maintainer email="czm@example.com">czm</maintainer>
+  <license>Apache-2.0</license>
+
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>apriltag_msgs</depend>
+  <depend>apriltag_ros</depend>
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>message_filters</depend>
+  <depend>v4l2_camera</depend>
+  <depend>image_proc</depend>
+  <depend>camera_calibration</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

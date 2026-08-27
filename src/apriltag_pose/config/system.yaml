@@ -1,0 +1,21 @@
+# system.yaml - 距离误差实验与分析的全局参数
+# 被 scripts/run_distance_test.sh 和 scripts/analyze_distance_results.py 读取.
+# 这些值只是建议, 实际以你用卷尺测量的真实距离为准.
+
+# 实验真实距离 (米), 每个距离采集多组样本
+true_distances_m: [0.30, 0.50, 0.70, 1.00]
+
+# 每个距离 + 每种姿态采集的样本数
+samples_per_batch: 20
+
+# 姿态分组
+sample_groups: ["front", "tilted"]
+
+# 过滤: decision_margin 低于此值的样本被剔除 (apriltag decision_margin 典型 30~100)
+min_decision_margin: 20.0
+
+# 标签边长 (米) - 必须与 apriltag.yaml / launch tag_size 一致, 且为实测值
+tag_size_m: 0.080
+
+# 输出目录 (相对家目录)
+output_dir: "apriltag_pose_ws/results"

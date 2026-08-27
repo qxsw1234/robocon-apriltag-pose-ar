@@ -1,0 +1,39 @@
+# apriltag.yaml - apriltag_ros / AprilTagNode 参数
+# 已对照 ros-humble-apriltag-ros 3.4.0 默认配置
+# (/opt/ros/humble/share/apriltag_ros/cfg/tags_36h11.yaml) 校验.
+#
+# 关键字段:
+#   image_transport       : raw (订阅未压缩图像)
+#   family                : 36h11
+#   size                  : 默认标签边长 (米)
+#   max_hamming           : 0 (不允许误码)
+#   qos_profile           : sensor_data (BEST_EFFORT, 匹配 image_proc 输出)
+#   detector.*            : 见 apriltag.h
+#   pose_estimation_method: pnp  => apriltag_ros 发布 camera_optical_frame->tag_N TF
+#   tag.ids/frames/sizes  : 关心的标签 ID / TF 子坐标系 / 每个标签的边长 (米)
+#
+# !!! 启动前必须用尺子测量真实 AprilTag 边长, 修改 size 和 tag.sizes[0] !!!
+# 单位是米 (m). 0.080 只是占位值.
+
+/**:
+  ros__parameters:
+    image_transport: raw
+    family: 36h11
+    size: 0.080
+    max_hamming: 0
+    qos_profile: sensor_data
+
+    detector:
+      threads: 2
+      decimate: 1.0
+      blur: 0.0
+      refine: true
+      sharpening: 0.25
+      debug: false
+
+    pose_estimation_method: pnp
+
+    tag:
+      ids: [0]
+      frames: [tag_0]
+      sizes: [0.080]

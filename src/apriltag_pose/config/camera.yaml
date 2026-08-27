@@ -1,0 +1,39 @@
+# camera.yaml - 摄像头内参 (camera_calibration 输出格式)
+# ===========================================================================
+# !!! 这是【占位文件】, 所有内参为零, 不能用于真实位姿估计 !!!
+#
+# 真实使用前必须标定:
+#   ros2 launch apriltag_pose calibration.launch.py
+# 标定完成后, cameracalibrator 会生成 ost.yaml. 把它的内容按下面格式
+# 整理为本文件 (image_width/image_height 必须与运行时分辨率一致, 默认 640x480),
+# 覆盖此占位文件.
+#
+# 在标定完成前, 用 use_rectified_image:=false 运行可做 2D 冒烟测试 (无位姿).
+# ===========================================================================
+
+image_width: 640
+image_height: 480
+camera_name: usb_camera
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [0.0, 0.0, 0.0,
+         0.0, 0.0, 0.0,
+         0.0, 0.0, 1.0]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.0, 0.0, 0.0, 0.0, 0.0]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1.0, 0.0, 0.0,
+         0.0, 1.0, 0.0,
+         0.0, 0.0, 1.0]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [0.0, 0.0, 0.0, 0.0,
+         0.0, 0.0, 0.0, 0.0,
+         0.0, 0.0, 1.0, 0.0]
