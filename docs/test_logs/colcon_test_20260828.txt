@@ -1,0 +1,20 @@
+Starting >>> apriltag_pose
+--- output: apriltag_pose
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+cachedir: /home/czm/apriltag_pose_ws/build/apriltag_pose/.pytest_cache
+rootdir: /home/czm/apriltag_pose_ws/src/apriltag_pose
+plugins: ament-copyright-0.12.15, launch-testing-ros-0.19.13, ament-lint-0.12.15, ament-flake8-0.12.15, ament-pep257-0.12.15, ament-xmllint-0.12.15, launch-testing-1.0.14, colcon-core-0.21.0, cov-3.0.0
+collected 82 items
+
+test/test_ar_geometry.py ........................                        [ 29%]
+test/test_calibration_file.py .........                                  [ 40%]
+test/test_pose_filter.py ...........................                     [ 73%]
+test/test_pose_math.py ......................                            [100%]
+
+- generated xml file: /home/czm/apriltag_pose_ws/build/apriltag_pose/pytest.xml -
+============================== 82 passed in 1.02s ==============================
+---
+Finished <<< apriltag_pose [1.33s]
+
+Summary: 1 package finished [1.46s]

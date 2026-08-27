@@ -6,7 +6,7 @@
 
 ## 当前提交状态
 
-- 代码、构建与单元测试完成，最终 82/82 测试通过；
+- 代码、构建与单元测试完成，最终 82/82 测试通过；最新构建与测试日志见 `docs/test_logs/`；
 - 普通题和 AR 拓展题的算法、节点与离线闭环验证完成；
 - 已生成可打印棋盘格和 AprilTag；
 - 本次提交未完成真实摄像头内参标定、实机测距和实机 AR 视频，`camera.yaml` 保留为零内参占位文件；
@@ -20,4 +20,3 @@ cd ~/apriltag_pose_ws
 colcon build --packages-select apriltag_pose --symlink-install
 source install/setup.bash
 ```
-
